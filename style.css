@@ -1,0 +1,217 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #d0f2e7;
+    color:rgb(241, 124, 124);
+}
+
+/* Navigation Bar */
+header {
+    background-color: #ecbea3;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ff5f6d;
+}
+
+.logo h1 {
+    color: #ffc371;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffc371;
+}
+
+.login-btn {
+    background-color: #ff5f6d;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ffc371;
+}
+
+/* Hero Section */
+.consultant-hero {
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ffc371;
+}
+
+/* Doctors Section */
+.doctors-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.doctors-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.doctor-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 250px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+    top: -20px;
+    left: 15px;
+    font-size: 0.75rem;
+    color: #ffc371;
+}
+
+.submit-btn {
+    background-color: #ff5f6d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ffc371;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}

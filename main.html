@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocXpert - Main Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-item"><a href="home.html">Home</a></div>
+            <div class="nav-item"><a href="appointment.html">Appointment</a></div>
+            <div class="nav-item"><a href="homeRemedies.html">Home Remedies</a></div>
+            <div class="nav-item"><a href="contact-us.html">Contact Us</a></div>
+            <div class="nav-item"><a href="about-us.html">About Us</a></div>
+        </nav>
+    </header>
+    <br>
+<main>
+    <h1  style="text-align: center;"  ,c >DocXpert</h1>
+
+</main>
+    <!-- Hero Section -->
+    <section class="consultant-hero">
+        <div class="hero-content">
+            <h2>Connect with the Best Doctors</h2>
+            <p>We provide instant access to top medical professionals who are ready to assist you. Book a consultation and get expert advice in minutes.</p>
+            <a href="#contact" class="cta-btn">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors-section">
+        <h2>Our Expert Consultants</h2>
+        <div class="doctor-cards">
+            <div class="card">
+                <img src="sarahDentist.jpeg" alt="Dr. Sarah Johnson">
+                <h3>Dr. Sarah Johnson</h3>
+                <p>Specialist in Pediatrics</p>
+                <p>15+ years of experience</p>
+            </div>
+            <div class="card">
+                <img src="Dr_-John-Williams.webp" alt="Dr. John Williams">
+                <h3>Dr. John Williams</h3>
+                <p>Specialist in Cardiology</p>
+                <p>20+ years of experience</p>
+            </div>
+            <div class="card">
+                <img src="Emily Davis.jpg" alt="Dr. Emily Davis">
+                <h3>Dr. Emily Davis</h3>
+                <p>Specialist in Neurology</p>
+                <p>10+ years of experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact">
+        <h2>Book a Consultation</h2>
+        <form action="submit_consultation.php" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Full Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="specialty" name="specialty" required>
+                <label for="specialty">Specialty Required</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="message">Describe Your Problem</label>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 DocXpert. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
