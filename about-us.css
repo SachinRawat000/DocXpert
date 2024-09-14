@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e9ecef; /* Light Gray background */
+    margin: 0;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #ffffff; /* White background for content */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #343a40; /* Dark Gray for headings */
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    color: #6c757d; /* Medium Gray for general text */
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* About Sections */
+.about-section {
+    background-color: #f1f3f5; /* Light background with subtle color */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 5px solid #17a2b8; /* Teal accent */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    color: #17a2b8; /* Teal for section headings */
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.about-section p {
+    color: #495057; /* Darker Gray for text */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-section ul li {
+    margin-bottom: 15px;
+    color: #495057;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+strong {
+    color: #007bff; /* Blue for emphasis */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .about-section h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
