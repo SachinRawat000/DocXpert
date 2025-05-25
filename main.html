@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocXpert - Main Page</title>
+    <title>DocXpert - Your Health Partner</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <header>
         <nav class="navbar">
             <div class="nav-item"><a href="home.html">Home</a></div>
@@ -15,76 +15,129 @@
             <div class="nav-item"><a href="homeRemedies.html">Home Remedies</a></div>
             <div class="nav-item"><a href="contact-us.html">Contact Us</a></div>
             <div class="nav-item"><a href="about-us.html">About Us</a></div>
+            <div class="nav-item"><a href="login.html" id="loginBtn">Login</a></div>
         </nav>
     </header>
-    <br>
-<main>
-    <h1  style="text-align: center;"  ,c >DocXpert</h1>
 
-</main>
-    <!-- Hero Section -->
     <section class="consultant-hero">
         <div class="hero-content">
-            <h2>Connect with the Best Doctors</h2>
-            <p>We provide instant access to top medical professionals who are ready to assist you. Book a consultation and get expert advice in minutes.</p>
-            <a href="#contact" class="cta-btn">Book Consultation</a>
+            <h2>Expert Medical Care at Your Fingertips</h2>
+            <p>Connect with top healthcare professionals, book appointments, and get expert medical advice from the comfort of your home.</p>
+            <a href="appointment.html" class="cta-btn">Book an Appointment</a>
         </div>
     </section>
 
-    <!-- Doctors Section -->
     <section class="doctors-section">
-        <h2>Our Expert Consultants</h2>
+        <h2>Meet Our Expert Doctors</h2>
         <div class="doctor-cards">
             <div class="card">
-                <img src="sarahDentist.jpeg" alt="Dr. Sarah Johnson">
-                <h3>Dr. Sarah Johnson</h3>
-                <p>Specialist in Pediatrics</p>
-                <p>15+ years of experience</p>
+                <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dr. Sarah Johnson">
+                <div class="card-content">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p>Pediatrics Specialist</p>
+                    <p>15+ years experience</p>
+                </div>
             </div>
             <div class="card">
-                <img src="Dr_-John-Williams.webp" alt="Dr. John Williams">
-                <h3>Dr. John Williams</h3>
-                <p>Specialist in Cardiology</p>
-                <p>20+ years of experience</p>
+                <img src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dr. John Williams">
+                <div class="card-content">
+                    <h3>Dr. John Williams</h3>
+                    <p>Cardiology Specialist</p>
+                    <p>20+ years experience</p>
+                </div>
             </div>
             <div class="card">
-                <img src="Emily Davis.jpg" alt="Dr. Emily Davis">
-                <h3>Dr. Emily Davis</h3>
-                <p>Specialist in Neurology</p>
-                <p>10+ years of experience</p>
+                <img src="https://images.pexels.com/photos/5214997/pexels-photo-5214997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dr. Emily Davis">
+                <div class="card-content">
+                    <h3>Dr. Emily Davis</h3>
+                    <p>Neurology Specialist</p>
+                    <p>10+ years experience</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
     <section class="contact-section" id="contact">
-        <h2>Book a Consultation</h2>
-        <form action="submit_consultation.php" method="POST">
+        <h2>Schedule Your Consultation</h2>
+        <form id="consultationForm">
             <div class="form-group">
-                <input type="text" id="name" name="name" required>
                 <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
+                <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required>
-                <label for="email">Email</label>
             </div>
             <div class="form-group">
-                <input type="text" id="specialty" name="specialty" required>
-                <label for="specialty">Specialty Required</label>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group">
+                <label for="message">Your Health Concern</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
-                <label for="message">Describe Your Problem</label>
             </div>
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn">Request Consultation</button>
         </form>
     </section>
 
-    <!-- Footer Section -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 DocXpert. All rights reserved.</p>
         </div>
     </footer>
+
+    <script type="module">
+        import { supabase } from './src/supabase.js';
+        import { signIn, signOut } from './src/auth.js';
+
+        const consultationForm = document.getElementById('consultationForm');
+        const loginBtn = document.getElementById('loginBtn');
+
+        consultationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(consultationForm);
+            
+            try {
+                const { data: { user } } = await supabase.auth.getUser();
+                if (!user) {
+                    alert('Please login to schedule a consultation');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                // Handle form submission
+                alert('Thank you! We will contact you shortly to confirm your consultation.');
+                consultationForm.reset();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        // Check auth state
+        supabase.auth.onAuthStateChange((event, session) => {
+            if (session) {
+                loginBtn.textContent = 'Logout';
+            } else {
+                loginBtn.textContent = 'Login';
+            }
+        });
+
+        loginBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const { data: { user } } = await supabase.auth.getUser();
+            
+            if (user) {
+                try {
+                    await signOut();
+                    window.location.href = '/';
+                } catch (error) {
+                    console.error('Error signing out:', error);
+                }
+            } else {
+                window.location.href = '/login.html';
+            }
+        });
+    </script>
 </body>
 </html>
